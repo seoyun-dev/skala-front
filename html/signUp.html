@@ -8,93 +8,142 @@
 </head>
 <body>
     <div class="container">
+        <div class="book">
+            <header class="book-title-plate">
+                <h1>✍ 회원가입</h1>
+                <p class="lead">회원가입을 환영합니다.</p>
+            </header>
 
-<h2>👤 회원가입</h2>
-    <p>SKALA-FRONT 회원가입을 환영합니다.</p>
-    <hr>
+            <nav class="book-index">
+                <a href="index.html" class="book-tab tab-home">🏠 홈</a>
+                <a href="myProfile.html" class="book-tab">🙍🏻‍♀️ 소개</a>
+                <a href="myClass.html" class="book-tab">📚 수업 시간표</a>
+                <a href="myHoliday.html" class="book-tab">🌴 휴일 일과</a>
+                <a href="myTrip.html" class="book-tab">🌍 여행 앨범</a>
+                <a href="signUp.html" class="book-tab active">📝 회원가입</a>
+            </nav>
 
-    <form action="signUpResult.html" method="get">
-        
-        <fieldset>
-            <legend>계정 정보</legend>
-            <p>
-                <label for="userId">아이디: </label>
-                <input type="text" id="userId" name="userId" minlength="4" maxlength="15" required placeholder="4~15자 영문/숫자">
-                <small>(필수)</small>
-            </p>
-            <p>
-                <label for="userPw">비밀번호: </label>
-                <input type="password" id="userPw" name="userPw" minlength="8" required placeholder="8자 이상 입력">
-                <small>(필수)</small>
-            </p>
-            <p>
-                <label for="userEmail">이메일: </label>
-                <input type="text" id="userEmail" name="userEmail" placeholder="example">
-                @
-                <select name="emailDomain">
-                    <option value="direct">직접 입력</option>
-                    <option value="naver.com">naver.com</option>
-                    <option value="gmail.com">gmail.com</option>
-                    <option value="daum.net">daum.net</option>
-                </select>
-            </p>
-        </fieldset>
+        <form action="signUpResult.html" method="get">
 
-        <br>
+            <fieldset>
+                <legend>계정 정보</legend>
+                <p>
+                    <label for="userId">아이디 : </label>
+                    <input type="text" id="userId" name="userId" minlength="4" maxlength="15" pattern="[A-Za-z0-9]{4,15}" title="영문과 숫자로 4~15자를 입력해주세요" required placeholder="4~15자 영문/숫자">
+                    <small>(필수)</small>
+                    <br>
+                    <small id="idValidationMsg" class="field-validation-msg" aria-live="polite"></small>
+                </p>
+                <p>
+                    <label for="userPw">비밀번호 : </label>
+                    <span class="password-field">
+                        <input type="password" id="userPw" name="userPw" minlength="8" maxlength="15" pattern="(?=.*[A-Za-z])(?=.*\d).{8,15}" title="영문과 숫자를 조합하여 8~15자로 입력해주세요" required placeholder="영문+숫자 조합, 8~15자">
+                        <button type="button" class="password-toggle" id="userPwToggle" aria-label="비밀번호 표시">
+                            <img src="../media/noeye.png" alt="비밀번호 숨김" id="userPwToggleIcon" class="icon-noeye">
+                        </button>
+                    </span>
+                    <small>(필수, 영문+숫자 조합 8~15자)</small>
+                    <br>
+                    <small id="pwValidationMsg" class="field-validation-msg" aria-live="polite"></small>
+                </p>
+                <p>
+                    <label for="userEmailLocal">이메일 : </label>
+                    <input type="text" id="userEmailLocal" name="userEmailLocal" required placeholder="example" class="email-inline">
+                    @
+                    <select id="emailDomain" name="emailDomain" class="email-inline">
+                        <option value="" disabled selected>-- 선택해 주세요 --</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="direct">직접 입력</option>
+                    </select>
+                    <input type="text" id="userEmailCustomDomain" name="userEmailCustomDomain" placeholder="도메인 입력" class="email-inline is-hidden">
+                    <br>
+                    <small id="emailValidationMsg" class="field-validation-msg" aria-live="polite"></small>
+                </p>
+            </fieldset>
 
-        <fieldset>
-            <legend>개인 프로필 정보</legend>
-            <p>
-                <label for="userName">이름: </label>
-                <input type="text" id="userName" name="userName" required>
-            </p>
-            <p>
-                <label for="userBirth">생년월일: </label>
-                <input type="date" id="userBirth" name="userBirth">
-            </p>
-            <p>
-                성별: 
-                <label><input type="radio" name="gender" value="male" checked> 남성</label>
-                <label><input type="radio" name="gender" value="female"> 여성</label>
-                <label><input type="radio" name="gender" value="none"> 선택안함</label>
-            </p>
-            <p>
-                관심 분야 (중복 선택 가능): <br>
-                <label><input type="checkbox" name="interest" value="frontend"> 웹 프론트엔드 (Vue.js/HTML)</label><br>
-                <label><input type="checkbox" name="interest" value="uiux"> UI/UX 디자인 표준</label><br>
-                <label><input type="checkbox" name="interest" value="backend"> 백엔드 & 데이터베이스</label><br>
-                <label><input type="checkbox" name="interest" value="devops"> 클라우드 & 인프라</label>
-            </p>
-            
-            <p>
-                <label for="joinPath">가입 경로: </label>
-                <select id="joinPath" name="joinPath">
-                    <option value="" disabled selected>-- 선택해 주세요 --</option>
-                    <option value="search">인터넷 검색</option>
-                    <option value="friend">지인 추천</option>
-                    <option value="sns">SNS 광고</option>
-                    <option value="etc">기타</option>
-                </select>
-            </p>
-        </fieldset>
+            <fieldset>
+                <legend>개인 프로필 정보</legend>
+                <p>
+                    <label for="userName">이름 : </label>
+                    <input type="text" id="userName" name="userName" required placeholder="이름을 입력하세요">
+                </p>
+                <p>
+                    <label for="userBirth">생년월일 : </label>
+                    <input type="date" id="userBirth" name="userBirth">
+                </p>
+                <p>
+                    성별:
+                    <label><input type="radio" name="gender" value="female" checked> 여성</label>
+                    <label><input type="radio" name="gender" value="male"> 남성</label>
+                    <label><input type="radio" name="gender" value="none"> 선택 안 함</label>
+                </p>
+                <p>
+                    관심 분야 (중복 선택 가능) : <br>
+                    <label><input type="checkbox" name="interest" value="frontend"> 웹 프론트엔드 (HTML/CSS/JS)</label><br>
+                    <label><input type="checkbox" name="interest" value="backend"> 백엔드 & 데이터베이스</label><br>
+                    <label><input type="checkbox" name="interest" value="ai-dev"> AI 개발 (CV/LLM/RL 등)</label><br>
+                    <label><input type="checkbox" name="interest" value="ai-research"> AI 연구</label><br>
+                    <label><input type="checkbox" name="interest" value="devops"> 클라우드 & 인프라</label>
+                </p>
+                <p>
+                    <label for="joinPath">가입 경로 : </label>
+                    <select id="joinPath" name="joinPath">
+                        <option value="" disabled selected>-- 선택해 주세요 --</option>
+                        <option value="search">인터넷 검색</option>
+                        <option value="friend">지인 추천</option>
+                        <option value="sns">SNS 광고</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </p>
+            </fieldset>
 
-        <br>
+            <fieldset>
+                <legend>자기소개</legend>
+                <p>
+                    <label for="mbti">MBTI : </label>
+                    <select id="mbti" name="mbti">
+                        <option value="" disabled selected>-- 선택해 주세요 --</option>
+                        <option value="INTJ">INTJ</option>
+                        <option value="INTP">INTP</option>
+                        <option value="ENTJ">ENTJ</option>
+                        <option value="ENTP">ENTP</option>
+                        <option value="INFJ">INFJ</option>
+                        <option value="INFP">INFP</option>
+                        <option value="ENFJ">ENFJ</option>
+                        <option value="ENFP">ENFP</option>
+                        <option value="ISTJ">ISTJ</option>
+                        <option value="ISFJ">ISFJ</option>
+                        <option value="ESTJ">ESTJ</option>
+                        <option value="ESFJ">ESFJ</option>
+                        <option value="ISTP">ISTP</option>
+                        <option value="ISFP">ISFP</option>
+                        <option value="ESTP">ESTP</option>
+                        <option value="ESFP">ESFP</option>
+                        <option value="unknown">❓ 모르겠어요</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="favColor">좋아하는 색상 : </label>
+                    <input type="color" id="favColor" name="favColor" value="#2f6d4f">
+                </p>
+                <p>
+                    <label for="intro">나를 표현하는 한 줄 소개 또는 가입 인사 : </label><br>
+                    <textarea id="intro" name="intro" rows="5" cols="50" maxlength="200" placeholder="여기에 내용을 입력하세요 (최대 200자)"></textarea>
+                </p>
+            </fieldset>
 
-        <fieldset>
-            <legend>자기소개</legend>
-            <p>
-                <label for="intro">나를 표현하는 한 줄 소개 또는 가입 인사:</label><br>
-                <textarea id="intro" name="intro" rows="5" cols="50" placeholder="여기에 내용을 입력하세요 (최대 200자)"></textarea>
-            </p>
-        </fieldset>
+            <div class="form-actions">
+                <input type="submit" class="btn-submit" value="동의하고 회원가입">
+                <input type="reset" class="btn-reset" value="다시 작성">
+            </div>
 
-        <br>
-
-        <input type="submit" class="btn-submit" value="동의하고 회원가입">
-        <input type="reset" class="btn-reset" value="다시 작성">
-
-    </form>
-
+        </form>
+        </div>
     </div>
+
+    <script src="../script/form-validation.js"></script>
+    <script src="../script/pageTransition.js"></script>
 </body>
 </html>

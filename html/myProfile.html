@@ -3,48 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 프로필 페이지</title>
+    <title>박서윤의 프로필</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
+        <div class="book">
+            <header class="book-title-plate">
+                <h1>🙍🏻‍♀️ 박서윤은 누구일까?</h1>
+            </header>
 
-    <h1>👋 안녕하세요! 저를 소개합니다</h1>
-    <p>아래는 제가 좋아하는 것들과 올해의 계획, 그리고 저를 표현하는 단어들입니다.</p>
+            <nav class="book-index">
+                <a href="index.html" class="book-tab tab-home">🏠 홈</a>
+                <a href="myProfile.html" class="book-tab active">🙍🏻‍♀️ 소개</a>
+                <a href="myClass.html" class="book-tab">📚 수업 시간표</a>
+                <a href="myHoliday.html" class="book-tab">🌴 휴일 일과</a>
+                <a href="myTrip.html" class="book-tab">🌍 여행 앨범</a>
+                <a href="signUp.html" class="book-tab">📝 회원가입</a>
+            </nav>
 
-    <!-- 1. 내가 좋아하는 음식 (순서 없는 리스트) -->
-    <h2>🍕 내가 좋아하는 음식</h2>
-    <ul>
-        <li>아이스 아메리카노 ☕</li>
-        <li>매콤한 떡볶이 🌶️</li>
-        <li>달콤한 초콜릿 케이크 🍰</li>
-    </ul>
+            <div class="profile-layout">
+            <aside class="profile-sidebar">
+                <img class="profile-photo" src="../media/profile.png" alt="박서윤 프로필 사진">
 
-    <hr>
+                <h2>🔗 더 알아보기</h2>
+                <ul class="link-list">
+                    <li><a href="https://seoyunpark.notion.site/2026-SKALA-Seoyun-Park-3571bceb7ca6809a8219f3bc35f498f4?pvs=74" target="_blank" rel="noopener noreferrer">🙋‍♀️ 자기소개 페이지</a></li>
+                    <li><a href="https://seoyunpark.notion.site/Seoyun-s-TechBlog-e49e630d8e004eb0978072c9383867eb" target="_blank" rel="noopener noreferrer">📝 테크 블로그</a></li>
+                    <li><a href="https://www.instagram.com/book_ashley_dud/" target="_blank" rel="noopener noreferrer">📚 책스타그램</a></li>
+                </ul>
 
-    <!-- 2. 올 해 할 일 (순서 있는 리스트) -->
-    <h2>📅 올해 할 일</h2>
-    <ol>
-        <li>일주일에 책 한 권씩 읽기 📚</li>
-        <li>꾸준히 운동해서 체력 키우기 💪</li>
-        <li>새로운 프로그래밍 언어 배우기 💻</li>
-    </ol>
+                <h2>🍜 내가 좋아하는 음식</h2>
+                <ul class="food-list">
+                    <li>아이스 아메리카노</li>
+                    <li>김치</li>
+                    <li>초콜릿</li>
+                    <li>마라샹궈</li>
+                </ul>
 
-    <hr>
+                <h2>🌱 취미 & 관심사</h2>
+                <ul class="interest-list">
+                    <li>요가</li>
+                    <li>식물 키우기</li>
+                    <li>AI 기술</li>
+                    <li>책 읽기</li>
+                </ul>
+            </aside>
 
-    <!-- 3. 나를 설명하는 단어들 (정의형 목록) -->
-    <h2>✨ 나를 설명하는 단어들</h2>
-    <dl>
-        <dt>🏃‍♂️ 호기심</dt>
-        <dd>새로운 기술이나 흥미로운 트렌드를 보면 직접 경험해보고 배워야 직성이 풀립니다.</dd>
-        
-        <dt>☕ 꾸준함</dt>
-        <dd>매일 작은 계획이라도 세우고 그것을 지키기 위해 노력하는 성실함을 가지고 있습니다.</dd>
-        
-        <dt>🎨 크리에이티브</dt>
-        <dd>단순한 결과물보다는 사용자에게 더 나은 경험과 시각적인 즐거움을 주는 것을 좋아합니다.</dd>
-    </dl>
+            <div class="profile-main">
+                <h2>🎯 올해 할 일</h2>
+                <ol class="goal-list">
+                    <li><b>SK AX, SK Telecom</b> 취업하기</li>
+                    <li>요가 수련에 집중해서 <b>건강한 몸</b> 꾸준히 만들기</li>
+                    <li>능동적인 자세로 <b>AI 관련 전문가</b>로 성장하기</li>
+                </ol>
 
+                <h2>💬 나를 설명하는 단어들</h2>
+                <dl class="trait-list">
+                    <dt>🤝 협력</dt>
+                    <dd>사람들과 <b>함께</b> 힘을 모아 갈등을 풀어가고, <b>같은 목표를 향해 나아가는 과정</b> 자체를 즐깁니다.</dd>
+
+                    <dt>🔍 집요함</dt>
+                    <dd>문제가 해결되거나 완전히 이해될 때까지 <b>끝까지 파고드는 끈기</b>를 가지고 있습니다.</dd>
+
+                    <dt>😄 밝음</dt>
+                    <dd>웃음이 많고 <b>긍정적인 에너지</b>로 주변 분위기를 밝게 만드는 편입니다.</dd>
+                </dl>
+
+                <h2>🎓 Education</h2>
+                <dl class="education-list">
+
+                    <dt>2019.03 - 2024.02</dt>
+                    <dd>명지대학교 정보통신공학과 학사 <b><mark>과수석</mark> 졸업</b></dd>
+
+                    <dt>2022.05 - 2022.09</dt>
+                    <dd>위코드(WeCode) 백엔드 부트캠프 수료</dd>
+
+                    <dt>2023.04 - 2024.02</dt>
+                    <dd>명지대학교 정보통신공학과 고급인공지능이론 연구실 학부연구생</dd>
+
+                    <dt>2024.03 - 2026.02</dt>
+                    <dd>명지대학교 인공지능융합학과 <b>석사 졸업</b></dd>
+                </dl>
+            </div>
+            </div>
+        </div>
     </div>
+
+    <script src="../script/pageTransition.js"></script>
 </body>
 </html>

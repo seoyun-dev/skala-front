@@ -3,35 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 휴일 일과</title>
+    <title>박서윤의 휴일 일과</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
+        <div class="book">
+            <header class="book-title-plate">
+                <h1>🌴 박서윤의 휴일 일과</h1>
+            </header>
 
-    <h1>🎉 나의 휴일 일과</h1>
-    <br>
+            <nav class="book-index">
+                <a href="index.html" class="book-tab tab-home">🏠 홈</a>
+                <a href="myProfile.html" class="book-tab">🙍🏻‍♀️ 소개</a>
+                <a href="myClass.html" class="book-tab">📚 수업 시간표</a>
+                <a href="myHoliday.html" class="book-tab active">🌴 휴일 일과</a>
+                <a href="myTrip.html" class="book-tab">🌍 여행 앨범</a>
+                <a href="signUp.html" class="book-tab">📝 회원가입</a>
+            </nav>
 
-    <h2>🛏️ <u>느긋한 아침</u></h2>
-    <p><b>09:00</b> - 😴 늦잠 자는 행복</p>
-    <p><b>10:00</b> - 🍳 여유 있게 <mark>브런치</mark> 즐기기</p>
-    <p><b>11:00</b> - ☕ <b>커피 한 잔</b>과 음악 감상 🎵</p>
-    <br>
+        <section class="day-section section-morning">
+            <input type="checkbox" id="reveal-morning" class="reveal-checkbox">
+            <div class="day-content">
+                <div class="day-main">
+                    <h2>🛏️ 느긋한 아침</h2>
+                    <div class="timeline">
+                        <p class="timeline-item">
+                            <span class="timeline-dot">😴</span>
+                            <span class="timeline-time">10:00</span>
+                            <span class="timeline-text">꿀잠</span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🧹</span>
+                            <span class="timeline-time">10:00</span>
+                            <span class="timeline-text">스트레칭하고 침대정리+돌돌이</span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🍳</span>
+                            <span class="timeline-time">10:30</span>
+                            <label for="reveal-morning" class="reveal-label">
+                                여유 있게 <mark>아침식사</mark> 즐기기
+                                <svg class="reveal-underline" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+                                    <path class="reveal-underline-path" d="M0,6 Q10,2 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6" />
+                                </svg>
+                            </label>
+                            <svg class="reveal-arrow" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+                                <path class="reveal-arrow-line" d="M2 12 Q 30 0 50 10 T 86 10" />
+                                <polygon class="reveal-arrow-head" points="76,3 76,17 92,10" />
+                            </svg>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🎵</span>
+                            <span class="timeline-time">11:00</span>
+                            <span class="timeline-text">방 청소</span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">📖</span>
+                            <span class="timeline-time">11:30</span>
+                            <span class="timeline-text"><mark>경제 혹은 IT 책</mark> 읽기</span>
+                        </p>
+                    </div>
+                </div>
+                <label for="reveal-morning" class="reveal-photo-wrap">
+                    <span class="polaroid-frame">
+                        <img src="../media/breakfast.jpeg" alt="아침식사" class="reveal-photo">
+                    </span>
+                    <span class="reveal-photo-hint">🔍 클릭해서 보기</span>
+                </label>
+            </div>
+        </section>
+        <br>
 
-    <h2>🚶 <u>오후 활동</u></h2>
-    <p><b>13:00</b> - 🏞️ 공원 산책하며 <b>마음 정리</b></p>
-    <p><b>14:30</b> - 📷 사진 찍으며 <b>일상의 순간 기록</b></p>
-    <p><b>16:00</b> - 🛍️ 충동구매 대신 <mark>창의적인 쇼핑</mark></p>
-    <br>
+        <section class="day-section section-afternoon">
+            <input type="checkbox" id="reveal-afternoon" class="reveal-checkbox">
+            <div class="day-content">
+                <div class="day-main">
+                    <h2>🚶 오후 활동</h2>
+                    <div class="timeline">
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🍽️</span>
+                            <span class="timeline-time">12:00</span>
+                            <span class="timeline-text">점심먹고 식후 산책</span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">☕</span>
+                            <span class="timeline-time">13:00</span>
+                            <span class="timeline-text">카페가서 부족했던 부분<mark> 추가 공부</mark></span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🌿</span>
+                            <span class="timeline-time">17:30</span>
+                            <label for="reveal-afternoon" class="reveal-label">
+                                식물 <mark>물 주고 가지치기</mark>
+                                <svg class="reveal-underline" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+                                    <path class="reveal-underline-path" d="M0,6 Q10,2 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6" />
+                                </svg>
+                            </label>
+                            <svg class="reveal-arrow" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+                                <path class="reveal-arrow-line" d="M2 12 Q 30 0 50 10 T 86 10" />
+                                <polygon class="reveal-arrow-head" points="76,3 76,17 92,10" />
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+                <label for="reveal-afternoon" class="reveal-photo-wrap">
+                    <span class="polaroid-frame">
+                        <img src="../media/plant.jpeg" alt="식물에 물 주는 모습" class="reveal-photo">
+                    </span>
+                    <span class="reveal-photo-hint">🔍 클릭해서 보기</span>
+                </label>
+            </div>
+        </section>
+        <br>
 
-    <h2>🎬 <u>저녁과 밤</u></h2>
-    <p><b>18:00</b> - 🥘 <b>맛있는 저녁</b> 만들기</p>
-    <p><b>20:00</b> - 🎥 영화 감상 (코미디 추천 😂)</p>
-    <p><b>23:00</b> - 📖 짧은 독서 후 힐링 타임 🛁</p>
-    <br>
+        <section class="day-section section-evening">
+            <input type="checkbox" id="reveal-evening" class="reveal-checkbox">
+            <div class="day-content">
+                <div class="day-main">
+                    <h2>🎬 저녁과 밤</h2>
+                    <div class="timeline">
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🧘</span>
+                            <span class="timeline-time">18:00</span>
+                            <label for="reveal-evening" class="reveal-label">
+                                <mark>빈야사 플로우</mark> 요가
+                                <svg class="reveal-underline" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+                                    <path class="reveal-underline-path" d="M0,6 Q10,2 20,6 T40,6 T60,6 T80,6 T100,6 T120,6 T140,6 T160,6 T180,6 T200,6" />
+                                </svg>
+                            </label>
+                            <svg class="reveal-arrow" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+                                <path class="reveal-arrow-line" d="M2 12 Q 30 0 50 10 T 86 10" />
+                                <polygon class="reveal-arrow-head" points="76,3 76,17 92,10" />
+                            </svg>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🎮</span>
+                            <span class="timeline-time">19:00</span>
+                            <span class="timeline-text">프로틴 쉐이크 먹으며 오버워치</span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">📔</span>
+                            <span class="timeline-time">21:00</span>
+                            <span class="timeline-text">하루를 돌아보며 <mark>일기 쓰기</mark></span>
+                        </p>
+                        <p class="timeline-item">
+                            <span class="timeline-dot">🌙</span>
+                            <span class="timeline-time">22:00</span>
+                            <span class="timeline-text">잠들기 전 <mark>시집 혹은 소설</mark> 읽기</span>
+                        </p>
+                    </div>
+                </div>
+                <label for="reveal-evening" class="reveal-photo-wrap">
+                    <span class="polaroid-frame">
+                        <img src="../media/yoga1.jpeg" alt="빈야사 플로우 요가 1" class="reveal-photo">
+                    </span>
+                    <span class="polaroid-frame">
+                        <img src="../media/yoga2.jpeg" alt="빈야사 플로우 요가 2" class="reveal-photo">
+                    </span>
+                    <span class="reveal-photo-hint">🔍 클릭해서 보기</span>
+                </label>
+            </div>
+        </section>
+        <br>
 
-    <p>📅 휴일 버전 작성일: 2026년 5월</p>
-
+        <p class="page-footer">📅 작성일: 2026년 7월</p>
+        </div>
     </div>
+
+    <script src="../script/pageTransition.js"></script>
 </body>
 </html>

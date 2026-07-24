@@ -1,36 +1,61 @@
-// 1. 방금 만든 weatherAPI.js 모듈에서 핵심 비동기 함수를 쏙 훔쳐옵니다.
-import { getLiveWeather } from './weatherAPI.js';
+// weatherAPI.js 모듈에서 날씨를 가져오는 함수를 불러옵니다.
+import { fetchCityWeather } from "./weatherAPI.js";
 
-const citySelect = document.querySelector('#city-select');
-const weatherBox = document.querySelector('#weather-box');
+const CITIES = [
+    { name: "나의 고향 서울", flag: "🇰🇷", lat: 37.5665, lon: 126.9780 },
+    { name: "오빠가 있는 시카고", flag: "🇺🇸", lat: 41.8781, lon: -87.6298 },
+    { name: "아빠의 청춘이 담긴 뉴질랜드", flag: "🇳🇿", lat: -36.8485, lon: 174.7633 }
+];
 
-citySelect.addEventListener('change', async function(event) {
+const citySelect = document.querySelector("#citySelect");
+const weatherBox = document.querySelector("#weather-box");
 
-    console.log("선택된 옵션의 값:", event.target.value); // 디버깅용 로그
+const MIN_LOADING_TIME = 1200;
 
-    const selectedValue = event.target.value;
-    if (selectedValue === "none") {
-        weatherBox.innerHTML = "<p>도시를 선택하세요.</p>";
-        return;
-    }
+function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-    const coords = selectedValue.split(',');
-    const cityName = citySelect.options[citySelect.selectedIndex].text;
+// "2026-07-24T14:30" 형태의 현지 시간 문자열을 "오후 2:30"처럼 바꿔줍니다.
+function formatLocalTime(isoString) {
+    const [, timePart] = isoString.split("T");
+    const [hourStr, minuteStr] = timePart.split(":");
+    let hour = parseInt(hourStr, 10);
+    const period = hour < 12 ? "오전" : "오후";
+    hour = hour % 12 || 12;
+    return `${period} ${hour}:${minuteStr}`;
+}
 
-    weatherBox.innerHTML = "<p>모듈을 통해 실시간 수신 중... 📡</p>";
+async function renderWeather() {
+    const city = CITIES[citySelect.value];
 
-    // 2. 수입해온 비동기 모듈 함수를 실행해 결과만 딱 받아옵니다. (코드가 훨씬 간결해집니다!)
-    const weatherInfo = await getLiveWeather(coords[0], coords[1]);
+    // 1. 먼저 도시 정보와 로딩 문구를 즉시 화면에 그립니다.
+    weatherBox.innerHTML = `
+        <p><b>📍 ${city.flag} ${city.name}</b></p>
+        <p class="weather-loading">로딩 중… ⏳</p>
+    `;
 
-    if (weatherInfo) {
+    // 2. weatherAPI 모듈 함수를 호출해 실제 날씨를 비동기로 받아오되,
+    //    로딩 문구가 최소 시간 동안은 보이도록 함께 기다립니다.
+    const [weather] = await Promise.all([
+        fetchCityWeather(city.lat, city.lon),
+        wait(MIN_LOADING_TIME)
+    ]);
+
+    if (weather) {
         weatherBox.innerHTML = `
-            <div style="background-color: #e8f8f5; border-left: 5px solid #16a085; padding: 15px; margin-top: 10px;">
-                <h4>모듈형 날씨 피드: ${cityName}</h4>
-                <p>🌡️ 기온: ${weatherInfo.temp}°C</p>
-                <p>💧 습도: ${weatherInfo.humidity}%</p>
-            </div>
+            <p><b>📍 ${city.flag} ${city.name}</b></p>
+            <p>${weather.conditionEmoji} 날씨: ${weather.conditionLabel}</p>
+            <p>🌡️ 기온: ${weather.temperature}°C</p>
+            <p>💧 습도: ${weather.humidity}%</p>
+            <p>${weather.isDay ? "☀️ 낮" : "🌙 밤"} · ${formatLocalTime(weather.time)}</p>
         `;
     } else {
-        weatherBox.innerHTML = "<p>데이터를 불러오지 못했습니다.</p>";
+        weatherBox.innerHTML += "<p>⚠️ 날씨 정보를 가져오지 못했습니다.</p>";
     }
-});
+}
+
+if (citySelect && weatherBox) {
+    citySelect.addEventListener("change", renderWeather);
+    renderWeather();
+}

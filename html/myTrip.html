@@ -3,37 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 여행 앨범</title>
+    <title>박서윤의 여행 앨범</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🌍 나의 여행 앨범 🎵</h1>
-        <audio controls>
-        <source src="../media/music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <hr>
-    <div class="trip-grid-container">
-        <p class="trip-card">
-            <img src="../media/리장.jpg" width="400" height="200" alt="리장 호도협"><br>리장 호도협 (2025년)
-        </p>
-        <p class="trip-card">
-            <img src="../media/세부.jpg" width="400" height="200" alt="세부 탑스힐 "><br>세부 탑스힐 (2024년)
-        </p>
-        <p class="trip-card">
-            <img src="../media/홋카이도.jpg" width="400" height="200" alt="훗카이도 대설산"><br>훗카이도 대설산 (2025년)
-        </p>
+        <div class="book">
+            <header class="book-title-plate">
+                <h1>🎵 박서윤의 여행 앨범</h1>
+                <p class="lead">📸 사진을 클릭하면 위치와 설명을 보실 수 있습니다 📸</p>
+            </header>
+
+            <nav class="book-index">
+                <a href="index.html" class="book-tab tab-home">🏠 홈</a>
+                <a href="myProfile.html" class="book-tab">🙍🏻‍♀️ 소개</a>
+                <a href="myClass.html" class="book-tab">📚 수업 시간표</a>
+                <a href="myHoliday.html" class="book-tab">🌴 휴일 일과</a>
+                <a href="myTrip.html" class="book-tab active">🌍 여행 앨범</a>
+                <a href="signUp.html" class="book-tab">📝 회원가입</a>
+            </nav>
+
+        <audio class="bgm" autoplay loop controls>
+            <source src="../media/잔나비-초록을거머쥔우리는.mp3" type="audio/mpeg">
+            브라우저가 오디오 재생을 지원하지 않습니다.
+        </audio>
+
+        <div class="trip-columns">
+        <section class="trip-album">
+            <h2>🇳🇿 뉴질랜드 (2025년)</h2>
+            <div class="carousel">
+                <input type="radio" name="nz" id="nz-1" class="carousel-radio" checked>
+                <input type="radio" name="nz" id="nz-2" class="carousel-radio">
+                <input type="radio" name="nz" id="nz-3" class="carousel-radio">
+                <input type="radio" name="nz" id="nz-4" class="carousel-radio">
+                <input type="radio" name="nz" id="nz-5" class="carousel-radio">
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <a class="carousel-slide" href="#lightbox-nz-1"><img src="../media/newzeland1.jpeg" alt="뉴질랜드 여행 사진 1"></a>
+                        <a class="carousel-slide" href="#lightbox-nz-2"><img src="../media/newzeland2.jpeg" alt="뉴질랜드 여행 사진 2"></a>
+                        <a class="carousel-slide" href="#lightbox-nz-3"><img src="../media/newzeland3.jpeg" alt="뉴질랜드 여행 사진 3"></a>
+                        <a class="carousel-slide" href="#lightbox-nz-4"><img src="../media/newzeland4.jpeg" alt="뉴질랜드 여행 사진 4"></a>
+                        <a class="carousel-slide" href="#lightbox-nz-5"><img src="../media/newzeland5.jpeg" alt="뉴질랜드 여행 사진 5"></a>
+                    </div>
+                </div>
+
+                <nav class="carousel-nav">
+                    <label for="nz-5" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="nz-2" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="nz-1" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="nz-3" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="nz-2" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="nz-4" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="nz-3" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="nz-5" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="nz-4" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="nz-1" class="carousel-arrow carousel-next">›</label>
+                </nav>
+
+                <div class="carousel-dots">
+                    <label for="nz-1" class="carousel-dot"></label>
+                    <label for="nz-2" class="carousel-dot"></label>
+                    <label for="nz-3" class="carousel-dot"></label>
+                    <label for="nz-4" class="carousel-dot"></label>
+                    <label for="nz-5" class="carousel-dot"></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="trip-album">
+            <h2>🇨🇭 스위스 (2024년)</h2>
+            <div class="carousel">
+                <input type="radio" name="sw" id="sw-1" class="carousel-radio" checked>
+                <input type="radio" name="sw" id="sw-2" class="carousel-radio">
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <a class="carousel-slide" href="#lightbox-sw-1"><img src="../media/swiss1.jpeg" alt="스위스 여행 사진 1"></a>
+                        <a class="carousel-slide" href="#lightbox-sw-2"><img src="../media/swiss2.jpeg" alt="스위스 여행 사진 2"></a>
+                    </div>
+                </div>
+
+                <nav class="carousel-nav">
+                    <label for="sw-2" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="sw-2" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="sw-1" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="sw-1" class="carousel-arrow carousel-next">›</label>
+                </nav>
+
+                <div class="carousel-dots">
+                    <label for="sw-1" class="carousel-dot"></label>
+                    <label for="sw-2" class="carousel-dot"></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="trip-album">
+            <h2>🇫🇷 파리 (2024년)</h2>
+            <div class="carousel">
+                <input type="radio" name="pr" id="pr-1" class="carousel-radio" checked>
+                <input type="radio" name="pr" id="pr-2" class="carousel-radio">
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <a class="carousel-slide" href="#lightbox-pr-1"><img src="../media/paris1.jpeg" alt="파리 여행 사진 1"></a>
+                        <a class="carousel-slide" href="#lightbox-pr-2"><img src="../media/paris2.jpeg" alt="파리 여행 사진 2"></a>
+                    </div>
+                </div>
+
+                <nav class="carousel-nav">
+                    <label for="pr-2" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="pr-2" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="pr-1" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="pr-1" class="carousel-arrow carousel-next">›</label>
+                </nav>
+
+                <div class="carousel-dots">
+                    <label for="pr-1" class="carousel-dot"></label>
+                    <label for="pr-2" class="carousel-dot"></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="trip-album">
+            <h2>🇹🇼 대만 (2024년)</h2>
+            <div class="carousel">
+                <input type="radio" name="tp" id="tp-1" class="carousel-radio" checked>
+                <input type="radio" name="tp" id="tp-2" class="carousel-radio">
+                <input type="radio" name="tp" id="tp-3" class="carousel-radio">
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <a class="carousel-slide" href="#lightbox-tp-1"><img src="../media/taipei1.jpeg" alt="대만 여행 사진 1"></a>
+                        <a class="carousel-slide" href="#lightbox-tp-2"><img src="../media/taipei2.jpeg" alt="대만 여행 사진 2"></a>
+                        <a class="carousel-slide" href="#lightbox-tp-3"><img src="../media/taipei3.jpeg" alt="대만 여행 사진 3"></a>
+                    </div>
+                </div>
+
+                <nav class="carousel-nav">
+                    <label for="tp-3" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="tp-2" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="tp-1" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="tp-3" class="carousel-arrow carousel-next">›</label>
+                </nav>
+                <nav class="carousel-nav">
+                    <label for="tp-2" class="carousel-arrow carousel-prev">‹</label>
+                    <label for="tp-1" class="carousel-arrow carousel-next">›</label>
+                </nav>
+
+                <div class="carousel-dots">
+                    <label for="tp-1" class="carousel-dot"></label>
+                    <label for="tp-2" class="carousel-dot"></label>
+                    <label for="tp-3" class="carousel-dot"></label>
+                </div>
+            </div>
+        </section>
+        </div>
+
+        <h2>📹 뉴질랜드 동물 영상</h2>
+        <div class="trip-video">
+            <video controls>
+                <source src="../media/newzeland_video.mp4" type="video/mp4">
+                브라우저가 비디오 재생을 지원하지 않습니다.
+            </video>
+        </div>
+        </div>
     </div>
-    <hr>
-    <h2>📹 나의 여행 브이로그</h2>
-    <p>
-        <video width="400" height="225" controls>
-            <source src="../media/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <br>리장의 아름다운 음악 ✈️
-    </p>
-    </div>
+
+    <a id="lightbox-nz-1" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/newzeland1.jpeg" alt="뉴질랜드 여행 사진 1 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 Hooker Valley Track 가는 길</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2882.376107854161!2d170.1109757119862!3d-43.74428597097743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDQ0JzM5LjQiUyAxNzDCsDA2JzQ4LjgiRQ!5e0!3m2!1sko!2skr!4v1784880867329!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">Hooker Valley Track으로 가는 길. 도로 위 풍경마저 감탄스러워서, 뉴질랜드에서는 카메라를 항상 챙기게 돼요!</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-nz-2" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/newzeland2.jpeg" alt="뉴질랜드 여행 사진 2 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 Hooker Valley Track</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1346194.8973005158!2d168.42259825054464!3d-44.42748502049711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d2a4b341d69d4dd%3A0x63bc845abb08c829!2sHooker Valley track!5e0!3m2!1sko!2skr!4v1784879623186!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">남섬 자연의 정수, Hooker Valley Track 🏔️. 평지 위주라 왕복 1~2시간이면 충분한데, 지금껏 본 자연 중 가장 웅장했던 곳이에요! 뉴질랜드 여행 정말 가아아아앙력 추천드립니다!!!</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-nz-3" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/newzeland3.jpeg" alt="뉴질랜드 여행 사진 3 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 마운트쿡 알파인 연어</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d901849.4768879316!2d169.28952492909482!3d-43.52416730713777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d2b1b09bf046139%3A0x7157b6535b29a985!2z66eI7Jq07Yq47L-hIOyVjO2MjOyduCDsl7DslrQ!5e0!3m2!1sko!2skr!4v1784879925819!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">연어 맛집이면서 호수 맛집🌊. 보정 하나 없는 원본 색이에요! 해가 좋은 날 가시면 정말 행복하실겁니다 ㅎㅎ</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-nz-4" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/newzeland4.jpeg" alt="뉴질랜드 여행 사진 4 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 로토루아</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32070.809353026365!2d176.2258482781044!3d-38.12236554185718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6c279be78735fb%3A0xfe2857a3da0bddb9!2zNTkgQmVubmV0dHMgUm9hZCwgS291dHUsIFJvdG9ydWEgMzAxMCDribTsp4jrnpzrk5w!5e0!3m2!1sko!2skr!4v1784880103693!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">북섬 로토루아에서 묵었던 에어비앤비. 숙소 바로 뒤로 넓은 호수가 펼쳐져 있어 카약을 타고 나갈 수 있었어요 🚣🏻‍♂️</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-nz-5" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/newzeland5.jpeg" alt="뉴질랜드 여행 사진 5 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 레이크 테카포</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9009.563383975707!2d170.4679296282836!3d-44.00963073517868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d2b9fed5d5861cf%3A0x8685a170c89c905f!2sDark Sky Project!5e0!3m2!1sko!2skr!4v1784880241407!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">남섬 레이크 테카포. 근처 숙소에서 찍은 사진인데, 육안으로도 은하수가 보일 만큼 공기가 맑은 곳입니다 🌌</p>
+            </div>
+        </div>
+    </a>
+
+
+
+    <a id="lightbox-sw-1" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/swiss1.jpeg" alt="스위스 여행 사진 1 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 Zermatt 마터호른 산</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82164.20974292091!2d7.674022079597989!3d45.997317610717246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f3368cbb9ecd9%3A0x9826458cace55849!2z66eI7YSw7Zi466W4IOyCsA!5e0!3m2!1sko!2skr!4v1784882043082!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">스위스는 체르마트가 최고입니다!! 그 중에서도 마터호른 산은 꼭 가보셔야해요. 사진보다 실물이 더 아름다움 주의 🏔️</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-sw-2" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/swiss2.jpeg" alt="스위스 여행 사진 2 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 First</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645447.7030772375!2d7.3416462288336595!3d46.43027451833589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478f9a2c8981e8e3%3A0x8a76d74bf4672c14!2sFirst!5e0!3m2!1sko!2skr!4v1784882193221!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">사진보다 더 엄청난 곳이에요! 산양들과 소가 걸어다니고 걷는 걸음걸음마다 감탄이 절로 나오는 자연경관을 품은 곳입니다 ㅎㅎ</p>
+            </div>
+        </div>
+    </a>
+
+    <a id="lightbox-pr-1" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/paris1.jpeg" alt="파리 여행 사진 1 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 베르사유</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.889862651014!2d2.1162884706398244!3d48.80888789567686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67d8435771be9%3A0x7a9ff825e5c4274d!2z67Kg66W07IKs7JygIOygleybkA!5e0!3m2!1sko!2skr!4v1784882755201!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">베르사유 궁전부터 정원까지 정교한 아름다움이 흘러넘치는 곳입니다! 파리가면 꼭 가보셔야해요 🏰</p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-pr-2" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/paris2.jpeg" alt="파리 여행 사진 2 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 파리</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.889862651014!2d2.1162884706398244!3d48.80888789567686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67d8435771be9%3A0x7a9ff825e5c4274d!2z67Kg66W07IKs7JygIOygleybkA!5e0!3m2!1sko!2skr!4v1784882755201!5m2!1sko!2skr" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc">파리의 상징적인 랜드마크와 아름다운 거리들을 경험해보세요!</p>
+            </div>
+        </div>
+    </a>
+
+    <a id="lightbox-tp-1" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/taipei1.jpeg" alt="대만 여행 사진 1 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 대만</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps?q=Taipei+Taiwan&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc"></p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-tp-2" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/taipei2.jpeg" alt="대만 여행 사진 2 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 대만</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps?q=Taipei+Taiwan&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc"></p>
+            </div>
+        </div>
+    </a>
+    <a id="lightbox-tp-3" class="lightbox" href="#">
+        <span class="lightbox-close">✕</span>
+        <div class="lightbox-content">
+            <img src="../media/taipei3.jpeg" alt="대만 여행 사진 3 크게 보기">
+            <div class="postit">
+                <p class="postit-text">📍 대만</p>
+                <div class="postit-map"><iframe src="https://www.google.com/maps?q=Taipei+Taiwan&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+                <p class="postit-desc"></p>
+            </div>
+        </div>
+    </a>
+
+    <script src="../script/pageTransition.js"></script>
 </body>
 </html>
