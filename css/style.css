@@ -212,7 +212,7 @@ h2 {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-width: 0;
     max-width: 100%;
     transition: color 0.3s ease;
@@ -1051,9 +1051,13 @@ form small {
     min-width: 0;
     max-width: 65vw;
     max-height: 85vh;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    background-color: #fdfdfa;
+    padding: 14px 14px 52px;
+    border-radius: 2px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
     object-fit: contain;
+    transform: rotate(-2deg);
 }
 
 .postit {
@@ -1482,6 +1486,8 @@ form small {
     .lightbox-content img {
         max-width: 80vw;
         max-height: 45vh;
+        padding: 10px 10px 34px;
+        transform: rotate(-1deg);
     }
 
     .postit {
@@ -1602,6 +1608,37 @@ form small {
 
     .best-shot-row .best-shot {
         flex: 1 1 auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .lightbox-content {
+        gap: 36px;
+    }
+
+    .lightbox-content img {
+        max-width: 58vw;
+        padding: 18px 18px 64px;
+    }
+
+    .postit {
+        flex: 0 0 300px;
+        padding: 24px 20px 30px;
+    }
+
+    .postit-text {
+        font-size: 20px;
+        margin: 6px 0 16px;
+    }
+
+    .postit-map iframe {
+        height: 180px;
+    }
+
+    .postit-desc {
+        font-size: 15px;
+        line-height: 1.75;
+        margin: 16px 0 0;
     }
 }
 

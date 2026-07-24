@@ -1,4 +1,3 @@
-// weatherAPI.js 모듈에서 날씨를 가져오는 함수를 불러옵니다.
 import { fetchCityWeather } from "./weatherAPI.js";
 
 const CITIES = [
@@ -16,7 +15,6 @@ function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// "2026-07-24T14:30" 형태의 현지 시간 문자열을 "오후 2:30"처럼 바꿔줍니다.
 function formatLocalTime(isoString) {
     const [, timePart] = isoString.split("T");
     const [hourStr, minuteStr] = timePart.split(":");
@@ -29,14 +27,11 @@ function formatLocalTime(isoString) {
 async function renderWeather() {
     const city = CITIES[citySelect.value];
 
-    // 1. 먼저 도시 정보와 로딩 문구를 즉시 화면에 그립니다.
     weatherBox.innerHTML = `
         <p><b>📍 ${city.flag} ${city.name}</b></p>
         <p class="weather-loading">로딩 중… ⏳</p>
     `;
 
-    // 2. weatherAPI 모듈 함수를 호출해 실제 날씨를 비동기로 받아오되,
-    //    로딩 문구가 최소 시간 동안은 보이도록 함께 기다립니다.
     const [weather] = await Promise.all([
         fetchCityWeather(city.lat, city.lon),
         wait(MIN_LOADING_TIME)

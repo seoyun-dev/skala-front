@@ -1,4 +1,3 @@
-// WMO 날씨 코드를 이모지+한글 설명으로 변환합니다.
 function getWeatherCondition(code) {
     if (code === 0) return { emoji: "☀️", label: "맑음" };
     if (code === 1 || code === 2) return { emoji: "🌤️", label: "구름 조금" };
@@ -11,7 +10,6 @@ function getWeatherCondition(code) {
     return { emoji: "🌡️", label: "정보 없음" };
 }
 
-// 외부(realtimeInfo.js)에서 가져다 쓸 수 있도록 export를 붙입니다.
 export async function fetchCityWeather(lat, lon) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,is_day&timezone=auto`;
 

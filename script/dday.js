@@ -1,6 +1,6 @@
 (function () {
-    const START_DATE = new Date(2026, 6, 14); // SKALA 입과 (7월은 6)
-    const END_DATE = new Date(2026, 11, 18); // SKALA 수료 (12월은 11)
+    const START_DATE = new Date(2026, 6, 14);
+    const END_DATE = new Date(2026, 11, 18);
 
     function formatDday(target) {
         const today = new Date();
